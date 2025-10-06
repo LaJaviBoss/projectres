@@ -89,6 +89,7 @@ body {
 .nav-link:focus {
   color: #751306;
   text-shadow: 0 0 8px rgba(156, 43, 9, 0.87);
+  animation: flicker 3s infinite;
 }
 
 /* Buscador a la derecha */
@@ -100,15 +101,16 @@ body {
 }
 
 .nav-search input {
+  font-family: 'font-mono';
   background: rgba(255,255,255,.1);
   border: 1px solid rgba(255,255,255,.2);
   border-radius: 8px;
-  color: #c08b52;
+  color: #fad8b36c;
   padding: .35rem .6rem;
 }
 
 .nav-search input::placeholder {
-  color: #cea567;
+  color: #1a1918;
 }
 
 .nav-search .btn {
@@ -148,7 +150,7 @@ body {
   color:#fff; text-decoration:none; font-weight:700;
   transition: transform .12s ease, filter .12s ease;
 }
-.btn:hover{ transform: translateY(-1px); filter: brightness(1.05); 
+.btn:hover{ transform: translateY(-1px); filter: brightness(1.05); animation: hoverPulse 0.8s ease-in-out infinite alternate;;
 background: linear-gradient(180deg, rgb(161, 35, 3), rgba(0,0,0,.55)); box-shadow:0 12px 32px rgba(255,120,20,.18); }
 
 /* MAIN con tinte calabaza + sombra de lectura */
@@ -333,6 +335,51 @@ background: linear-gradient(180deg, rgb(161, 35, 3), rgba(0,0,0,.55)); box-shado
     filter: drop-shadow(0 0 3px rgba(249,115,22,.3))
             drop-shadow(0 0 5px rgba(91,33,182,.2));
   }
+}
+
+/* === Respiración === */
+@keyframes glowPulse {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 5px rgba(249,115,22,.25));
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 15px rgba(249,115,22,.45));
+    transform: scale(1.02);
+  }
+}
+
+.main {
+  animation: glowPulse 6s ease-in-out infinite;
+}
+
+/* === Entrada flotante de las tarjetas === */
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card {
+  animation: floatIn 1s ease-out both;
+  animation-delay: calc(var(--i, 0) * 0.2s);
+  position: relative;
+}
+
+/* === Pulso al pasar el cursor === */
+@keyframes hoverPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(255,120,20,.2); }
+  50% { transform: scale(1.03); box-shadow: 0 0 35px rgba(255,120,20,.4); }
+}
+
+.card:hover {
+  animation: hoverPulse 0.8s ease-in-out infinite alternate;
+  z-index: 2;
 }
 
 /* === RESPONSIVE ≤1000PX === */

@@ -45,6 +45,7 @@
                   var(--bg);
       background: url('../img/jigsaw.jpg') center/cover no-repeat;
       color: var(--text);
+      animation: glowPulse 6s ease-in-out infinite;
     }
 
     .intro-logo {
@@ -67,6 +68,7 @@
 
     .intro-btn:hover {
       transform: scale(1.5);
+      animation: flicker 1s infinite;
       filter: brightness(1.5);
     }
 
@@ -84,6 +86,19 @@
     opacity: 0.7;
   }
 }
+
+/* === Respiración === */
+@keyframes glowPulse {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 5px rgba(249,115,22,.25));
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 15px rgba(249,115,22,.45));
+    transform: scale(1.02);
+  }
+}
+
 /* === LANDING ≤700PX === */
 .is-700 .intro-logo{ max-width:72vw; }
 .is-700 .intro-btn{ transform:none; }
