@@ -1,6 +1,6 @@
 > Descripción general
 
-OCTUBRE 666 es un sitio web temático inspirado en Halloween, desarrollado como parte de una entrega del Bootcamp de Desarrollo Web.
+OCTUBRE 666 es un sitio web temático inspirado en Halloween.
 El nombre hace referencia al 6 de octubre (06/10), fecha de presentación del proyecto, combinando el número del mes y del día con la simbología “666” del terror clásico.
 
 El sitio presenta un diseño inmersivo con ambientación de horror, aplicando los fundamentos de HTML5 y CSS
