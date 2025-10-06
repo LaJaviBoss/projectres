@@ -1,5 +1,5 @@
 :root{
-  --bg: #1a031dc4;
+  --bg: #16063a8e;
   --text: #F97316;     /* naranja calabaza */
   --light: #ffd7b3;    /* texto claro */
   --panel: rgba(255,255,255,.06);
@@ -79,6 +79,7 @@ body {
 
 .nav-link {
   color: #c27939;
+  text-shadow: 0 0 8px rgba(71, 0, 0, 0.87);
   text-decoration: none;
   font-weight: 600;
   font-size: 2rem;
@@ -144,10 +145,10 @@ body {
 }
 
 /* BOTÓN */
-.btn{
+.btn{ font-family: #POUND, sans-serif;
   display:inline-block; padding:.75rem 1rem; border-radius:10px;
   background: linear-gradient(100deg, #0d0122, #993a1d);
-  color:#fff; text-decoration:none; font-weight:700;
+  color:#fff; text-shadow: 0 0 8px rgba(0, 0, 0, 0.87); text-decoration:none; font-weight:700;
   transition: transform .12s ease, filter .12s ease;
 }
 .btn:hover{ transform: translateY(-1px); filter: brightness(1.05); animation: hoverPulse 0.8s ease-in-out infinite alternate;;
@@ -242,7 +243,7 @@ background: linear-gradient(180deg, rgb(161, 35, 3), rgba(0,0,0,.55)); box-shado
 
 /* Contenido dentro de la tarjeta */
 .card-body{ padding:1rem 1.1rem 1.1rem; }
-.card-body h3{ margin:.2rem 0 .35rem; color:#F97316; font-family: 'Sawsome'; font-size: 2.5rem;}
+.card-body h3{ margin:.2rem 0 .35rem; color:#F97316; font-family: 'Sawsome'; font-size: 2.5rem; text-shadow: 0 0 8px rgba(0, 0, 0, 0.87);}
 .card-body p{ margin:0 0 .6rem; color:#e9dccb; text-shadow: 0 0 8px rgb(0, 0, 0); font-family: 'Monster'; font-size: 1rem;}
 
 .btn.small{ padding:.45rem .75rem; font-size:.9rem; border-radius:8px; }
