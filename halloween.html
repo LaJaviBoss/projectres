@@ -31,24 +31,22 @@
 </script>
 <body>
 
-   <!-- HEADER / NAVBAR -->
   <header class="header">
-   <div class="logo">
-  <img src="./assets/img/logo.png" alt="Logo Octubre 666">
   <a href="#inicio" class="logo">
-</a>
+    <img src="./assets/img/logo.png" alt="Logo Octubre 666">
+  </a>
 
-</div>
-    <nav class="nav">
-  <a href="#inicio" class="nav-link">Inicio</a>
-  <a href="#productos" class="nav-link">Productos</a>
-  <a href="#quienes" class="nav-link">¿Quiénes somos?</a>
+  <nav class="nav">
+    <a href="#inicio" class="nav-link">Inicio</a>
+    <a href="#productos" class="nav-link">Productos</a>
+    <a href="#quienes" class="nav-link">¿Quienes somos?</a>
+  </nav>
+
   <form class="nav-search" onsubmit="event.preventDefault()">
     <input type="search" placeholder="buscar" aria-label="buscar">
     <button class="btn" type="submit">Buscar</button>
   </form>
-</nav>
-  </header>
+</header>
 
   <!-- MAIN -->
   <section class="main" id="inicio" aria-labelledby="main-title">
@@ -60,55 +58,41 @@
   </section>
 
   <!-- SUBTÍTULO -->
-  <h2 class="section-title" id="productos">PRODUCTOS</h2>
-<section class="grid"> … </section>
+ <h2 class="section-title" id="productos">PRODUCTOS</h2>
 
-  <!-- GRID DE CARTAS -->
-  <section class="grid">
-    <!-- SCAPE ROOM -->
-    <div class="card">
-      <h3>SCAPE ROOM</h3>
+<section class="grid">
+  <!-- SCAPE ROOM -->
+<div class="card product">
+  <div class="thumb" style="background-image:url('./assets/img/sr.jpg')"></div>
 
-      <!-- preview expandible (no se superpone) -->
-      <div class="preview">
-        <img src="./assets/img/sr.jpg" alt="Vista previa: Scape Room">
-        <div class="preview-body">
-          <p>Escapa del asesino antes de que el reloj llegue a cero.</p>
-        </div>
-      </div>
+  <div class="card-body">
+    <h3>SCAPE ROOM</h3>
+    <p>Escapa del asesino antes de que el reloj llegue a cero.</p>
+      <a href="#" class="btn small">Ver detalle</a>
+</div>
 
-      <button class="more" type="button">Ver detalle</button>
+<!-- CASA EMBRUJADA (mismo patrón) -->
+<div class="card product">
+  <div class="thumb" style="background-image:url('./assets/img/ce.jpg')"></div>
+
+  <div class="card-body">
+    <h3>CASA EMBRUJADA</h3>
+    <p>Pasillos oscuros, gritos y sombras. ¡Solo para valientes!</p>
+      <a href="#" class="btn small">Ver detalle</a>
     </div>
+</div>
 
-    <!-- CASA EMBRUJADA -->
-    <div class="card">
-      <h3>CASA EMBRUJADA</h3>
+<!-- MERCH -->
+<div class="card product card-wide">
+  <div class="thumb" style="background-image:url('./assets/img/merch.png')"></div>
 
-      <div class="preview">
-        <img src="./assets/img/ce.jpg" alt="Vista previa: Casa Embrujada">
-        <div class="preview-body">
-          <p>Pasillos oscuros, gritos y sombras. ¡Solo para valientes!</p>
-        </div>
-      </div>
+  <div class="card-body">
+    <h3>MERCHANDISING</h3>
+    <p>Poleras, pósters, cosplay, pines edición Octubre 666 y mas.</p>
+      <a href="#" class="btn small">Ver detalle</a>
+</div>
 
-      <button class="more" type="button">Ver detalle</button>
-    </div>
 
-    <!-- MERCH (centrada abajo, ancho completo) -->
-    <div class="card card-wide">
-      <h3>MERCH</h3>
-
-      <div class="preview">
-        <img src="./assets/img/merch.webp" alt="Vista previa: Merch">
-        <div class="preview-body">
-          <p>Poleras, pósters, pines edición Octubre 666 y mucho más.</p>
-          <a href="#" class="btn small">Ver más</a>
-        </div>
-      </div>
-
-      <button class="more" type="button">Ver detalle</button>
-    </div>
-  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
