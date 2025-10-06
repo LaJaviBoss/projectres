@@ -6,39 +6,113 @@
   <title>OCTUBRE 666 - Halloween Edition</title>
   <link rel="stylesheet" href="./assets/css/estilo.css">
 </head>
+<script>
+  // Evita navegar y muestra/oculta preview en móvil
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Cierra otros
+      document.querySelectorAll('.card.open').forEach(c => { if (c!==card) c.classList.remove('open'); });
+      // Alterna este
+      card.classList.toggle('open');
+    });
+  });
+
+  // Cerrar al tocar fuera
+  document.addEventListener('click', (e) => {
+    const open = document.querySelector('.card.open');
+    if (open && !open.contains(e.target)) open.classList.remove('open');
+  });
+
+  // Cerrar con Esc
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') document.querySelectorAll('.card.open').forEach(c => c.classList.remove('open'));
+  });
+</script>
 <body>
 
-  <!-- HEADER -->
+   <!-- HEADER / NAVBAR -->
   <header class="header">
-    <h1 class="logo">OCTUBRE <span>666</span></h1>
-    <a class="btn" href="#">Buscar</a>
+   <div class="logo">
+  <img src="./assets/img/logo.png" alt="Logo Octubre 666">
+  <a href="#inicio" class="logo">
+</a>
+
+</div>
+    <nav class="nav">
+  <a href="#inicio" class="nav-link">Inicio</a>
+  <a href="#productos" class="nav-link">Productos</a>
+  <a href="#quienes" class="nav-link">¿Quiénes somos?</a>
+  <form class="nav-search" onsubmit="event.preventDefault()">
+    <input type="search" placeholder="buscar" aria-label="buscar">
+    <button class="btn" type="submit">Buscar</button>
+  </form>
+</nav>
   </header>
 
-  <!-- Main -->
-  <section class="main">
+  <!-- MAIN -->
+  <section class="main" id="inicio" aria-labelledby="main-title">
     <div class="main-text">
-      <h2>Cumple todos tus <span>MIEDOS</span></h2>
-      <p>Tus pesadillas en un solo lugar. ¿Te atreves?</p>
+      <h2 id="main-title">No hay vida sin un poco de <span>Terror</span></h2>
+      <p>Vive en grande tus miedos. ¿TE ATREVES A INTENTARLO?</p>
       <a class="btn" href="#productos">Entrar</a>
     </div>
   </section>
 
-  <!-- Products -->
-  <main class="grid" id="productos">
-    <a href="#" class="card">
-      <h3>SCAPE ROOM</h3>
-      <p>Escapa del asesino antes de que el reloj llegue a cero.</p>
-    </a>
+  <!-- SUBTÍTULO -->
+  <h2 class="section-title" id="productos">PRODUCTOS</h2>
+<section class="grid"> … </section>
 
-    <a href="#" class="card">
+  <!-- GRID DE CARTAS -->
+  <section class="grid">
+    <!-- SCAPE ROOM -->
+    <div class="card">
+      <h3>SCAPE ROOM</h3>
+
+      <!-- preview expandible (no se superpone) -->
+      <div class="preview">
+        <img src="./assets/img/sr.jpg" alt="Vista previa: Scape Room">
+        <div class="preview-body">
+          <p>Escapa del asesino antes de que el reloj llegue a cero.</p>
+        </div>
+      </div>
+
+      <button class="more" type="button">Ver detalle</button>
+    </div>
+
+    <!-- CASA EMBRUJADA -->
+    <div class="card">
       <h3>CASA EMBRUJADA</h3>
-      <p>Pasillos oscuros, gritos y sombras. Solo para valientes!</p>
-    </a>
-  </main>
+
+      <div class="preview">
+        <img src="./assets/img/ce.jpg" alt="Vista previa: Casa Embrujada">
+        <div class="preview-body">
+          <p>Pasillos oscuros, gritos y sombras. ¡Solo para valientes!</p>
+        </div>
+      </div>
+
+      <button class="more" type="button">Ver detalle</button>
+    </div>
+
+    <!-- MERCH (centrada abajo, ancho completo) -->
+    <div class="card card-wide">
+      <h3>MERCH</h3>
+
+      <div class="preview">
+        <img src="./assets/img/merch.webp" alt="Vista previa: Merch">
+        <div class="preview-body">
+          <p>Poleras, pósters, pines edición Octubre 666 y mucho más.</p>
+          <a href="#" class="btn small">Ver más</a>
+        </div>
+      </div>
+
+      <button class="more" type="button">Ver detalle</button>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    © 2025 OCTUBRE 666 – Noches de Terror
+    © 2025 OCTUBRE 666 – F.E.A.R
   </footer>
 
 </body>
