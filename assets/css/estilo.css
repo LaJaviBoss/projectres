@@ -61,7 +61,7 @@ body {
 
 /* Logo alineado a la izquierda */
 .logo img {
-  width: clamp(160px, 20vw, 240px);
+  width: clamp(100px, 8vw, 240px);
   height: auto;
   filter: drop-shadow(0 0 12px rgba(249,115,22,.4));
   animation: flicker 3s infinite;
@@ -74,7 +74,7 @@ body {
   justify-content: center;
   gap: 8rem;
   text-align: center;
-  font-family: 'Danger', sans-serif;
+  font-family: 'Sawsome', sans-serif;
 }
 
 .nav-link {
@@ -188,7 +188,7 @@ body {
 }
 
 /* Título de sección */
-.section-title{
+.section-title{font-family: 'danger';
   text-align:center; margin: 1.5rem 0 .75rem;
   font-size:clamp(1.2rem,3.5vw,1.6rem); color:#ffd7b3; letter-spacing:.2rem;
 }
@@ -224,6 +224,7 @@ body {
   color:#ffe9d2;
   transition:.25s ease;
 }
+
 .card.product:hover{ transform: translateY(-2px); box-shadow:0 12px 32px rgba(255,120,20,.18); }
 
 /* Imagen superior */
@@ -240,8 +241,8 @@ body {
 
 /* Contenido dentro de la tarjeta */
 .card-body{ padding:1rem 1.1rem 1.1rem; }
-.card-body h3{ margin:.2rem 0 .35rem; color:#F97316; }
-.card-body p{ margin:0 0 .6rem; color:#e9dccb; }
+.card-body h3{ margin:.2rem 0 .35rem; color:#F97316; font-family: 'Sawsome'; font-size: 2.5rem;}
+.card-body p{ margin:0 0 .6rem; color:#e9dccb; font-family: 'Monster'; font-size: 1rem;}
 
 /* Botón dentro del expandible */
 .btn.small{ padding:.45rem .75rem; font-size:.9rem; border-radius:8px; }
@@ -287,9 +288,10 @@ body {
 }
 
 .social-title{
+  font-family: 'Danger';
   margin:0;
-  font-size:0.9rem;
-  font-weight:600;
+  font-size:1rem;
+  font-weight:500;
   color:#ffd7b3;
   letter-spacing:0.5px;
   text-transform:uppercase;
