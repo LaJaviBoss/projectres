@@ -1,0 +1,35 @@
+/* assets/css/diseno.css */
+
+/* ===== Paleta + tamaños (ajusta aquí y afecta todo) ===== */
+:root{
+  --bg: #1a031d;
+  --text: #F97316;     /* naranja calabaza */
+  --light: #ffd7b3;    /* texto claro secundario */
+  --panel: rgba(255,255,255,.06);
+  --panel-border: rgba(255,255,255,.12);
+
+  --h1: clamp(2rem, 6vw, 3.6rem);
+  --h2: clamp(1.6rem, 5vw, 2.6rem);
+  --h3: 1.25rem;
+  --p:  1rem;
+}
+
+/* ===== Reset básico ===== */
+*{ box-sizing:border-box; }
+body{
+  margin:0; font-family: system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 700px at 20% -10%, #6200fe40, transparent 40%),
+    radial-gradient(900px 600px at 90% 120%, rgba(255,106,0,.18), transparent 45%),
+    var(--bg);
+}
+
+/* ===== Botón simple ===== */
+.btn{
+  display:inline-block; padding:.75rem 1rem; border-radius:10px;
+  background: linear-gradient(135deg, #640bf2, var(--text));
+  color:#fff; text-decoration:none; font-weight:700;
+  transition: transform .12s ease, filter .12s ease;
+}
+.btn:hover{ transform: translateY(-1px); filter: brightness(1.05); }
