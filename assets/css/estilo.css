@@ -9,7 +9,7 @@
 *{ box-sizing:border-box; }
 
 /* ===============================
-   🎃 FUENTE PERSONALIZADA: SAWSOME
+   FUENTE PERSONALIZADA: SAWSOME
 ================================= */
 @font-face {
   font-family: 'Sawsome';
@@ -187,13 +187,12 @@ body {
   font-size: 2.5rem;
 }
 
-/* Título de sección */
+/* PRODUCTOS */
 .section-title{font-family: 'danger';
   text-align:center; margin: 1.5rem 0 .75rem;
   font-size:clamp(1.2rem,3.5vw,1.6rem); color:#ffd7b3; letter-spacing:.2rem;
 }
 
-/* GRID centrada como el boceto: dos arriba + merch abajo */
 .grid{
   max-width: 1100px; margin: 0 auto 2.5rem; padding: 0 1rem;
   display:grid; gap:1.2rem;
@@ -202,7 +201,6 @@ body {
 }
 .card-wide{ grid-column:1 / -1; justify-self:center; width:min(640px, 95%); }
 
-/* Tarjeta con THUMB (imagen superior) */
 .card{
   position:relative; display:grid; grid-template-rows: auto auto auto;
   width:100%;
@@ -213,7 +211,6 @@ body {
 }
 .card:hover{ transform: translateY(-2px); box-shadow:0 12px 32px rgba(255,120,20,.18); }
 
-/* Tarjeta apilada como MERCH */
 .card.product{
   display: grid;
   grid-template-rows: auto auto;
@@ -227,13 +224,12 @@ body {
 
 .card.product:hover{ transform: translateY(-2px); box-shadow:0 12px 32px rgba(255,120,20,.18); }
 
-/* Imagen superior */
 .thumb{
   aspect-ratio: 16/9;
   background-position:center; background-size:cover;
   position:relative;
 }
-.thumb::after{ /* tinte para integrarse con la paleta */
+.thumb::after{
   content:""; position:absolute; inset:0;
   background: linear-gradient(180deg, rgba(249,115,22,.14), rgba(0,0,0,.55));
   mix-blend-mode: multiply;
@@ -244,10 +240,8 @@ body {
 .card-body h3{ margin:.2rem 0 .35rem; color:#F97316; font-family: 'Sawsome'; font-size: 2.5rem;}
 .card-body p{ margin:0 0 .6rem; color:#e9dccb; font-family: 'Monster'; font-size: 1rem;}
 
-/* Botón dentro del expandible */
 .btn.small{ padding:.45rem .75rem; font-size:.9rem; border-radius:8px; }
 
-/* Grid de productos (dos arriba + merch centrada abajo) */
 .grid{
   max-width:1100px; margin:0 auto 2.5rem; padding:0 1rem;
   display:grid; gap:1.2rem;
@@ -260,7 +254,6 @@ body {
   .grid{ grid-template-columns: 1fr; }
   .card-wide{ grid-column:auto; width:100%; }
 }
-
 
 /* FOOTER */
 .footer{
@@ -278,7 +271,7 @@ body {
   gap: 12px;
 }
 
-/* Bloque redes con título */
+/* Bloque redes */
 .social-block{
   display:flex;
   flex-direction:column;
@@ -315,33 +308,12 @@ body {
   transform:scale(1.15);
   text-shadow:0 0 10px rgba(249,115,22,.5);
 }
-
-/* En móviles, centrar todo */
-@media (max-width:700px){
-  .social-block{ align-items:center; }
-}
-
-
-/* Centro siempre centrado, sin moverse por el contenido lateral */
 .copyright{
   margin:0; text-align:center; justify-self:center;
   font-size: .95rem;
 }
 
-/* El spacer equilibra el grid para mantener el centro centrado */
-.spacer{ width: 80px; height: 1px; justify-self:end; } /* opcional */
-
-/* Responsive: todo centrado en columna */
-@media (max-width: 700px){
-  .footer-inner{
-    grid-template-columns: 1fr;
-    gap: 8px;
-    text-align: center;
-  }
-  .social{ justify-content: center; }
-  .spacer{ display:none; }
-}
-
+.spacer{ width: 80px; height: 1px; justify-self:end; }
 
 /*ANIMACIONES */
 
@@ -352,8 +324,33 @@ body {
     filter: drop-shadow(0 0 10px rgba(249,115,22,.7))
             drop-shadow(0 0 25px rgba(91,33,182,.5));
   }
+
   20%,24%,55% {
     opacity:0.8;
     filter: drop-shadow(0 0 3px rgba(249,115,22,.3))
             drop-shadow(0 0 5px rgba(91,33,182,.2));
   }
+}
+
+/* === RESPONSIVE ≤1000PX === */
+.is-1000 .grid{ grid-template-columns: repeat(2, 1fr); }
+.is-1000 .card:nth-child(3n) > .preview{ right:auto; left: calc(100% + 12px); }
+
+/* === RESPONSIVE ≤700PX === */
+.is-700 .grid{ grid-template-columns: 1fr; }
+.is-700 .preview{
+  left:50%; right:auto; top: calc(100% + 10px);
+  width: min(92vw, 520px);
+  transform: translate(-50%, 6px) scale(.98);
+}
+.is-700 .card:hover > .preview,
+.is-700 .card:focus-within > .preview,
+.is-700 .card.open > .preview{
+  transform: translate(-50%, 0) scale(1);
+}
+
+/* === FOOTER ≤700PX (si lo usas) === */
+.is-700 .footer-inner{ grid-template-columns:1fr; gap:8px; text-align:center; }
+.is-700 .social{ justify-content:center; }
+.is-700 .social-block{ align-items:center; }
+.is-700 .spacer{ display:none; }

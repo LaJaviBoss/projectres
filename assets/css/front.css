@@ -84,3 +84,6 @@
     opacity: 0.7;
   }
 }
+/* === LANDING ≤700PX === */
+.is-700 .intro-logo{ max-width:72vw; }
+.is-700 .intro-btn{ transform:none; }
