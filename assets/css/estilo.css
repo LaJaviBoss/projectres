@@ -145,7 +145,7 @@ body {
 }
 
 /* BOTÓN */
-.btn{ font-family: #POUND, sans-serif;
+.btn{ font-family: sans-serif;
   display:inline-block; padding:.75rem 1rem; border-radius:10px;
   background: linear-gradient(100deg, #0d0122, #993a1d);
   color:#fff; text-shadow: 0 0 8px rgba(0, 0, 0, 0.87); text-decoration:none; font-weight:700;
