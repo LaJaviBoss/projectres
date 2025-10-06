@@ -7,6 +7,21 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Danger';
+  src: url('../font/Danger.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Monster';
+  src: url('../font/Monster.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root{
   --bg: #1a031d;
   --text: #F97316;
@@ -14,8 +29,11 @@
   --specter: #640bf2;
   --slime: #84CC16;
   --smoke: #B3B3B3;
+  --blood: #2b0202;
 }
 *{ box-sizing:border-box; }
+
+
     body {
       display: flex;
       flex-direction: column;
@@ -35,11 +53,11 @@
     }
 
     .intro-btn {
-      font-family: 'Sawsome', sans-serif;
+      font-family: 'mONSTER', sans-serif;
       margin-top: 2rem;
       padding: 1rem 2rem;
-      background: linear-gradient(135deg, var(--specter), var(--pumpkin));
-      color: #dbdbdb;
+      background: linear-gradient(100deg, var(--blood), var(--pumpkin));
+      color: #000000;
       text-decoration: none;
       font-weight: bold;
       border-radius: 10px;

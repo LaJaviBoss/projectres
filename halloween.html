@@ -6,29 +6,6 @@
   <title>OCTUBRE 666 - Halloween Edition</title>
   <link rel="stylesheet" href="./assets/css/estilo.css">
 </head>
-<script>
-  // Evita navegar y muestra/oculta preview en móvil
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', (e) => {
-      e.preventDefault();
-      // Cierra otros
-      document.querySelectorAll('.card.open').forEach(c => { if (c!==card) c.classList.remove('open'); });
-      // Alterna este
-      card.classList.toggle('open');
-    });
-  });
-
-  // Cerrar al tocar fuera
-  document.addEventListener('click', (e) => {
-    const open = document.querySelector('.card.open');
-    if (open && !open.contains(e.target)) open.classList.remove('open');
-  });
-
-  // Cerrar con Esc
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') document.querySelectorAll('.card.open').forEach(c => c.classList.remove('open'));
-  });
-</script>
 <body>
 
   <header class="header">
@@ -51,53 +28,94 @@
   <!-- MAIN -->
   <section class="main" id="inicio" aria-labelledby="main-title">
     <div class="main-text">
-      <h2 id="main-title">No hay vida sin un poco de <span>Terror</span></h2>
-      <p>Vive en grande tus miedos. ¿TE ATREVES A INTENTARLO?</p>
+      <h2 id="main-title">No hay diversion sin un poco de <span>Terror</span></h2>
+      <p>Vive tus mas grandes miedos. 
+        ¿TE ATREVES A INTENTARLO?</p>
       <a class="btn" href="#productos">Entrar</a>
     </div>
   </section>
 
-  <!-- SUBTÍTULO -->
- <h2 class="section-title" id="productos">PRODUCTOS</h2>
+ 
+  <!-- PRODUCTOS -->
+  <h2 class="section-title" id="productos">PRODUCTOS</h2>
 
-<section class="grid">
-  <!-- SCAPE ROOM -->
-<div class="card product">
-  <div class="thumb" style="background-image:url('./assets/img/sr.jpg')"></div>
-
-  <div class="card-body">
-    <h3>SCAPE ROOM</h3>
-    <p>Escapa del asesino antes de que el reloj llegue a cero.</p>
-      <a href="#" class="btn small">Ver detalle</a>
-</div>
-
-<!-- CASA EMBRUJADA (mismo patrón) -->
-<div class="card product">
-  <div class="thumb" style="background-image:url('./assets/img/ce.jpg')"></div>
-
-  <div class="card-body">
-    <h3>CASA EMBRUJADA</h3>
-    <p>Pasillos oscuros, gritos y sombras. ¡Solo para valientes!</p>
-      <a href="#" class="btn small">Ver detalle</a>
+  <section class="grid">
+    <!-- ESCAPE ROOM -->
+    <div class="card product">
+      <div class="thumb" style="background-image:url('./assets/img/sr.jpg')"></div>
+      <div class="card-body">
+        <h3>ESCAPE ROOMS</h3>
+        <p>Escapa del asesino antes de que el reloj llegue a cero.</p>
+        <a href="#" class="btn small">Ver detalle</a>
+      </div>
     </div>
-</div>
 
-<!-- MERCH -->
-<div class="card product card-wide">
-  <div class="thumb" style="background-image:url('./assets/img/merch.png')"></div>
+    <!-- CASAS EMBRUJADAS -->
+    <div class="card product">
+      <div class="thumb" style="background-image:url('./assets/img/ce.jpg')"></div>
+      <div class="card-body">
+        <h3>CASAS EMBRUJADAS</h3>
+        <p>Pasillos oscuros, gritos y sombras. ¡Solo para valientes!</p>
+        <a href="#" class="btn small">Ver detalle</a>
+      </div>
+    </div>
 
-  <div class="card-body">
-    <h3>MERCHANDISING</h3>
-    <p>Poleras, pósters, cosplay, pines edición Octubre 666 y mas.</p>
-      <a href="#" class="btn small">Ver detalle</a>
-</div>
+    <!-- MERCH (centrada abajo) -->
+    <div class="card product card-wide">
+      <div class="thumb" style="background-image:url('./assets/img/merch.png')"></div>
+      <div class="card-body">
+        <h3>MERCHANDISING</h3>
+        <p>Poleras, pósters, cosplay, pines edición Octubre 666 y más.</p>
+        <a href="#" class="btn small">Ver detalle</a>
+      </div>
+    </div>
+  </section>
 
-
+  <!-- QUIÉNES SOMOS (para que el link de la navbar funcione) -->
+  <section id="quienes" class="grid" style="max-width:900px;margin:2rem auto;padding:0 1rem;">
+    <div class="card product" style="grid-column:1/-1;">
+      <div class="card-body">
+        <h3>¿QUIÉNES SOMOS?</h3>
+        <p>Somos OCTUBRE 666 — experiencias inmersivas de terror: escape rooms y casas embrujadas.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    © 2025 OCTUBRE 666 – F.E.A.R
-  </footer>
+  <div class="footer-inner">
+    <!-- Izquierda: redes -->
+    <div class="social-block">
+      <h4 class="social-title">Síguenos</h4>
+      <div class="social">
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 3v3.2c0 2.4 1.9 4.3 4.3 4.3h1.7v3a8.1 8.1 0 0 1-6-2v5.5a5.5 5.5 0 1 1-5.5-5.5c.4 0 .7 0 1 .1v3.3a2.2 2.2 0 1 0 1.5 2.1V3h3z" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter / X" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 3h3.6l5 7 5.7-7H21l-7.3 9.2L21 21h-3.6l-5.3-7.4L6 21H3l7.6-9.8L3 3z" fill="currentColor"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Centro -->
+    <p class="copyright">© 2025 OCTUBRE 666 – F.E.A.R</p>
+
+    <!-- Derecha (espaciador) -->
+    <div class="spacer" aria-hidden="true"></div>
+  </div>
+</footer>
+
 
 </body>
 </html>
